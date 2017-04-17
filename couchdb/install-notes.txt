@@ -1,0 +1,20 @@
+
+chown -R couchdb:couchdb /usr/local/lib/couchdb
+
+"When you run 2.0 as a single node, it doesn’t create system databases on
+startup. You have to do this manually
+curl -X PUT http://127.0.0.1:5984/_users
+curl -X PUT http://127.0.0.1:5984/_replicator
+curl -X PUT http://127.0.0.1:5984/_global_changes:
+"
+
+Does the setup create those databases or do I have to do it by hand?  I
+can't seem to do it by hand without doing the setup, because I get a
+{
+    "error":"method_not_allowed",
+	    "reason":"Only GET,HEAD allowed"
+		}
+		error that is mentioned here:
+		http://couchdb-13.readthedocs.io/en/latest/api-basics/
+		if I try.
+
