@@ -1,0 +1,13 @@
+[Unit]
+Description=WWW service
+After=network.target
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=i
+WorkingDirectory=/usr/src/www/test.loc
+ExecStart=/usr/bin/nodemon /usr/src/www/test.loc/app.js -p 3100
+Restart=always
