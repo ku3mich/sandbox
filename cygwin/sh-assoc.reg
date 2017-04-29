@@ -1,0 +1,16 @@
+[HKEY_CLASSES_ROOT\.sh]
+@="Shell Script"
+
+[HKEY_CLASSES_ROOT\Shell Script]
+@="Shell Script"
+
+[HKEY_CLASSES_ROOT\Shell Script\DefaultIcon]
+@="%SystemRoot%\\System32\\imageres.dll,-68"
+
+[HKEY_CLASSES_ROOT\Shell Script\shell]
+
+[HKEY_CLASSES_ROOT\Shell Script\shell\open]
+@="Run with Cygwin"
+
+[HKEY_CLASSES_ROOT\Shell Script\shell\open\command]
+@="\"C:\\cygwin64\\bin\\mintty.exe\" -i /Cygwin-Terminal.ico C:\\cygwin64\\bin\\bash.exe -l -c \"cd $(dirname \\\"$(cygpath -u \\\"%1\\\")\\\") ; $(cygpath -u \\\"%1\\\") ; exec bash\""
