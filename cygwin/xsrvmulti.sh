@@ -1,2 +1,5 @@
-XWin -listen tcp -multiwindow
+XWin -listen tcp -multiwindow +iglx -wgl
+
+
+
 
