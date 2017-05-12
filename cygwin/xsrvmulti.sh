@@ -1,0 +1,2 @@
+XWin -listen tcp -multiwindow
+
