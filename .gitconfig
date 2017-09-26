@@ -1,0 +1,31 @@
+[color]
+	status = always
+	ui = true
+
+[status]
+	relativePaths = false
+
+[user]
+	email = ku3mich@gmail.com
+	name = Serhii Kuzmychov
+
+[merge]
+	defaultToUpstream = true
+
+[push]
+	default = matching
+
+[alias]
+	co = checkout
+	cm = commit -am
+	lg = log --pretty=short --decorate --graph
+	lf = log --pretty=short --decorate --graph --name-only
+	st = status
+	po = push
+	pl = pull
+	m = merge
+	a = add .
+	df = diff --staged
+	fix-ws = fix-whitespace --cached
+[core]
+	pager = less

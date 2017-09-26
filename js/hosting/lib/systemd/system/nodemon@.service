@@ -1,0 +1,15 @@
+[Unit]
+Description=nodemon [%i]
+After=network.target
+
+[Service]
+Type=simple
+User=i
+WorkingDirectory=/usr/src/www/%i
+ExecStart=/usr/bin/nodemon --config nodemon.config app.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+
