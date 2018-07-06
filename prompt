@@ -1,0 +1,21 @@
+# prompt with git branch and python venv in two lines(if it is git for long branches' names 
+
+color_prompt=yes
+if [ $color_prompt == 'yes' ] ; then
+     __red='\[\e[01;31m\]'
+     __green='\[\e[01;32m\]'
+     __reset='\[\e[00m\]'
+     __bright_blue='\[\e[01;34m\]'
+     __yellow='\[\e[93m\]'
+else
+    unset __red __green __reset __bright_blue __yellow
+fi
+
+ __generate_prompt() {
+     __git_branch=$(__parse_git_branch)
+     PS1=$([[ ! -z $VIRTUAL_ENV ]] && echo "$__yellow["`basename $VIRTUAL_ENV`"] ")
+     PS1=$PS1$([[ ! -z $__git_branch ]] && echo $__red$__git_branch'\n')
+     PS1=$PS1$__green'\u@\h'$__reset':'$__bright_blue'\w'$__reset'\$ '
+ }
+
+PROMPT_COMMAND='__generate_prompt'
