@@ -11,6 +11,8 @@
 
 [merge]
 	defaultToUpstream = true
+	tool = emerge
+	conflictstyle = diff3
 
 [push]
 	default = matching
@@ -27,5 +29,8 @@
 	a = add .
 	df = diff --staged
 	fix-ws = fix-whitespace --cached
+    au = !"git add $(git ls-files -o --exclude-standard)"
+    
 [core]
 	pager = less
+	autocrlf = false
