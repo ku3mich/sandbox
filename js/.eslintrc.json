@@ -1,0 +1,34 @@
+{
+    "globals" : {
+        "assert" : true,
+        "should" : true,
+        "sinon"  : true
+    },
+    "env": {
+        "browser": true,
+        "commonjs": true,
+		"node":true,
+        "es6": true,
+        "mocha": true
+    },
+	"plugins": [
+		"require-path-exists",
+        "mocha"
+	],
+    "extends": [ "eslint:recommended",
+                 "plugin:require-path-exists/recommended"
+               ],
+    
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "semi": [
+            "error",
+            "always"
+        ],
+		"no-console" : "off",
+		"no-unused-vars" : "warn",
+        "no-mixed-spaces-and-tabs" : "off"
+    }
+}

@@ -1,0 +1,1 @@
+--require @ku3mich/test/globals --reporter @ku3mich/test/spec

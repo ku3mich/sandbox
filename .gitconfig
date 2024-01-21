@@ -1,0 +1,36 @@
+[color]
+	status = always
+	ui = true
+
+[status]
+	relativePaths = false
+
+[user]
+	email = ku3mich@gmail.com
+	name = Serhii Kuzmychov
+
+[merge]
+	defaultToUpstream = true
+	tool = emerge
+	conflictstyle = diff3
+
+[push]
+	default = matching
+
+[alias]
+	co = checkout
+	cm = commit -am
+	lg = log --pretty=short --decorate --graph
+	lf = log --pretty=short --decorate --graph --name-only
+	st = status
+	po = push
+	pl = pull
+	m = merge
+	a = add .
+	df = diff --staged
+	fix-ws = fix-whitespace --cached
+    au = !"git add $(git ls-files -o --exclude-standard)"
+    
+[core]
+	pager = less
+	autocrlf = false

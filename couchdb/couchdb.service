@@ -9,4 +9,5 @@ WantedBy=multi-user.target
 Type=simple
 User=couchdb
 ExecStart=/usr/local/lib/couchdb/bin/couchdb -o /dev/stdout -e /dev/stderr
+WorkingDirectory=/usr/local/lib/couchdb
 Restart=always
