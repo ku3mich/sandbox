@@ -1,36 +1,61 @@
 [color]
 	status = always
-	ui = true
 
 [status]
-	relativePaths = false
+	relativePaths = true
+	submodulesummary = 0
 
 [user]
-	email = ku3mich@gmail.com
+	email = ku3cmich@gmail.com
 	name = Serhii Kuzmychov
 
 [merge]
 	defaultToUpstream = true
-	tool = emerge
-	conflictstyle = diff3
+	renamelimit = 20000
+	tool = kdiff3
 
 [push]
-	default = matching
+	default = current
 
 [alias]
 	co = checkout
 	cm = commit -am
-	lg = log --pretty=short --decorate --graph
+	ct = commit
+	lg = log --decorate --graph
+	lgs = log --pretty=oneline --decorate --graph
 	lf = log --pretty=short --decorate --graph --name-only
 	st = status
-	po = push
+	po = push origin --recurse-submodules=on-demand
 	pl = pull
 	m = merge
-	a = add .
-	df = diff --staged
-	fix-ws = fix-whitespace --cached
-    au = !"git add $(git ls-files -o --exclude-standard)"
-    
+	a = add
+	aa = add .
+	f = fetch
+	au = !"git status --porcelain | awk '/\\?\\?/{ print $2 }' | xargs git add"
+	assume-changed = update-index --no-assume-unchanged
+	assume-unchanged = update-index --assume-unchanged
+	sy = !"git aa; git cm sync"
+	syp = !"git sy; git po"
+	
+[diff]
+	submodule = log
+
+[mergetool]
+	keepBackup = false
+
+[diff "utf16"]
+	textconv = "iconv -f utf-16 -t utf-8"
+
+[rerere]
+	enabled = false
+
 [core]
-	pager = less
 	autocrlf = false
+
+[mergetool "kdiff3"]
+	trustExitCode = false
+
+[safe]
+	directory = *
+[init]
+	defaultBranch = main
